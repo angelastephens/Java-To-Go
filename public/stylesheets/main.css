@@ -12,6 +12,21 @@
   }
 
   /* --- Welcome Page Styles --- */
+
+    /* <html>
+  <head>
+  <style>
+    body  {
+      background-image: url("https://st3.depositphotos.com/3746151/13017/v/950/depositphotos_130173158-stock-illustration-sketch-of-coffee-shop-in.jpg");
+      background-color: #cccccc;
+    }
+  </style>
+  </head>
+  <body>
+ </body>
+ </html> */
+
+  
   body {
     background-color: rgb(124, 127, 128);
     color: #333;
@@ -19,8 +34,15 @@
     line-height: 18px;
   }
 
+  /* body {
+    background-image: url("https://st3.depositphotos.com/3746151/13017/v/950/depositphotos_130173158-stock-illustration-sketch-of-coffee-shop-in.jpg");
+    background-color: #cccccc;
+   } */
+
   .wrapper {
-    background: #fff;
+    background: rgb(245, 244, 244);
+    opacity: 0.75;
+    filter:alpha(opacity=75);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);

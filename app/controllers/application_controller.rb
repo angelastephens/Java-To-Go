@@ -5,35 +5,56 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    set :sessions, true
+    set :session_secret, ENV["SESSION_SECRET"]
+    set :method_override, true
+    register Sinatra::Flash
   end
 
   get "/" do
-    erb :welcome_signup
+    erb :'/welcome_signup'
   end
 
-  post "/" do
-    redirect to "/drink_model/create_drinks"
+  private 
+
+  def current_user 
+    User.find_by_id(session[:id])
   end
 
-  # get '/signup' do 
+  def logged_in?
+    !!current_user
+  end
 
-  #     erb :signup
+
+  
+  # get '/users/new' do 
+
+  #     erb :'/user/new'
   # end 
 
   # post '/signup' do
-      
-  #     erb :signup
+  #   @user = User.new(first_name: params[:first_name],last_name: params[:last_name],birthday: params[:birthday], phone_number: params[:phone_number], email_address: params[:email_address], user_name: params[:user_name], password: params[:password])
+  #   if @user.save
+  #     session[:id] = @user.id
+  #     redirect "/drinks/new"
+  #   else 
+  #     @error = "Ooops missing field, please try again!"
+  #     erb :'/user/new'
+  #   end
+    
   # end
 
 
-  get '/drink_model/create_drinks' do
-    erb :'drink_model/create_drinks'
-  end
+  # get '/drink_model/create_drinks' do
+  #   erb :'/drink_model/create_drinks'
+  # end
 
-  post "/drink_model/create_drinks" do
+  # post "/drink_model/create_drinks" do
     
-    redirect to "/homepage"
-  end
+  #   redirect to "/homepage"
+  # end
+
+
 
 
 end

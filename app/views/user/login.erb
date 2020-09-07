@@ -1,0 +1,19 @@
+<h1>Log In</h1>
+<%= @error %>
+<form method="post" action="/login">
+  <p>
+    <div><label for="user_name">User Name</label></div>
+    <input type="user_name" name="user_name" id="user_name" />
+  </p>
+  <p>
+    <div><label for="password">Password</label></div>
+    <input type="password" name="password" id="password" />
+  </p>
+  <input type="submit" value="Log In"/>
+</form>
+
+<style>
+    body  {
+      background-image: url("https://image.shutterstock.com/image-vector/bag-coffee-beans-vintage-style-600w-1468619435.jpg");
+      background-color: #cccccc;
+    } 
