@@ -1,22 +1,26 @@
 <div class="container">
-  <header><<img alt="" class="img" ng-src="https://cdnb.artstation.com/p/assets/images/images/015/387/295/large/yun-zhao-9.jpg?1548150252" src="https://cdnb.artstation.com/p/assets/images/images/015/387/295/large/yun-zhao-9.jpg?1548150252">"></header>
+  <header><img alt="" class="img" width="960" height="800" ng-src="https://cdnb.artstation.com/p/assets/images/images/015/387/295/large/yun-zhao-9.jpg?1548150252" src="https://cdnb.artstation.com/p/assets/images/images/015/387/295/large/yun-zhao-9.jpg?1548150252"></header>
   <div class="col-md-8 col-md-offset-2">
-    <h2>Sinatra Template Default Page</h2>
+    <%# <h2>Sinatra Template Default Page</h2> %>
 
-    <div class="content">
+    <%# <div class="content">
       <p>Welcome to your new favorite coffee app! (<code>app/views/welcome.erb)</code> and begin adding
       your own actions to <code>application_controller.rb</code>. For more information, see the <a href="https://github.com/thebrianemory/corneal">README</a>.</p>
-    </div>
+    </div> %>
 
-    <div class="sidebar">
-      <h3>Environment</h3>
-      <ul>
-        <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
-        <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
-        <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
-        <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
-      </ul>
-    </div>
+  <form action ="/" method = "post">
+  <h1> Signup</h1>
+  <p>First Name: <input id = "first_name" name = "first_name" type = "text"></p>
+  <p>Last Name:<input id = "last_name" name = "last_name" type = "text"></p>
+  <p>Birthday:<input id = "birthday" name = "birthday" type = "date"></p>
+  <p>Phone Number:<input id = "phone_number" name = "phone_number" type = "text"></p>
+  <p>Email Address:<input id = "email_address" name = "email_address" type = "text"></p>
+  <p>User Name:<input id = "user_name" name = "user_name" type = "text"></p>
+  <p>Password:<input id = "password" name = "password"type = "password"></p>
+  <input id = "submit" type="submit" value ="Signup">
 
-  </div>
+
+  
+
+  <%# </div> %>
 </div>

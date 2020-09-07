@@ -8,17 +8,31 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    erb :welcome_signup
   end
 
-  get '/signup' do 
+  post "/" do
+    redirect to "/drink_model/create_drinks"
+  end
 
-      erb :signup
-  end 
+  # get '/signup' do 
 
-  post '/signup' do
+  #     erb :signup
+  # end 
+
+  # post '/signup' do
       
-      erb :signup
+  #     erb :signup
+  # end
+
+
+  get '/drink_model/create_drinks' do
+    erb :'drink_model/create_drinks'
+  end
+
+  post "/drink_model/create_drinks" do
+    
+    redirect to "/homepage"
   end
 
 
