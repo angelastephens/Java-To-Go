@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    @bg = "https://st3.depositphotos.com/3746151/13017/v/950/depositphotos_130173158-stock-illustration-sketch-of-coffee-shop-in.jpg"
     erb :'/welcome_signup'
   end
 
