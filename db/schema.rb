@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200903014204) do
+ActiveRecord::Schema.define(version: 20200908010151) do
 
   create_table "drinks", force: :cascade do |t|
-    t.string "drink_name"
-    t.string "temperature"
-    t.string "caffeine_type"
-    t.string "milk_options"
-    t.string "flavors"
+    t.string  "drink_name"
+    t.string  "temperature"
+    t.string  "caffeine_type"
+    t.string  "milk_options"
+    t.string  "flavors"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

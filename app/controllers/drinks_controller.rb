@@ -1,19 +1,20 @@
 class DrinksController < ApplicationController
 
-  # GET: /drinks
+  # GET: /drinks- done 
   get "/drinks" do
     erb :"/drinks/index.html"
   end
 
 
-  # GET: /drinks/new
+  # GET: /drinks/new- done 
   get "/drinks/new" do
     erb :"/drinks/new.html"
   end
 
   # POST: /drinks
   post "/drinks" do
-    redirect "/homepage"
+    current_user.drinks << Drink.create(params) 
+    redirect "/drinks"
   end
 
 

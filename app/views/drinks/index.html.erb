@@ -1,3 +1,8 @@
-<h1>This is the Model's index page.</h1>
+<h1>User Homepage.</h1>
+<% current_user.drinks.each do |drink|%>
+<a href ="/drinks/<%= drink.id %>"> <%= drink.drink_name %> </a> 
+<% end%>
 
-<a href='/drinks/new'>Create a Drink </a>
+
+
+

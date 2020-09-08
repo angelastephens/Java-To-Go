@@ -17,4 +17,9 @@ class UsersController < ApplicationController
     end
     
   end
+
+  get '/home' do
+
+    erb :'/user/homepage'
+  end
 end

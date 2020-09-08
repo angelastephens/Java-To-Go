@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       # if they typed in the right password then log them in, if not show them the form again
       if user && user.authenticate(params[:password])
         session[:id] = user.id
-        redirect "/drinks"
+        redirect "/home"
       else 
         @error = "Incorrect user name or password"
         erb :'/user/login'
