@@ -1,2 +1,13 @@
-<h1>View Details About your drink and edit or delete.</h1>
+<form>
+ <input type="button" value="Back" onclick="history.back()">
+</form>
+
+<h1>View details about your drink and edit or delete.</h1>
+
+<h1><%= @drinks.drink_name %></h1>
+<p><%= @drinks.temperature %></p>
+<p><%= @drinks.caffeine_type %></p>
+<p><%= @drinks.milk_options %></p>
+<p><%= @drinks.flavors %></p>
+
 
