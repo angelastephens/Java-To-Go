@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
     
     get '/login' do 
+      @bg = "https://image.shutterstock.com/image-vector/bag-coffee-beans-vintage-style-600w-1468619435.jpg"
       erb :'/user/login'
     end
   
