@@ -1,12 +1,24 @@
 <%= @error%>
+<form>
+ <input type="button" value="Back" onclick="history.back()">
+</form>
 
   <form action ="/signup" method = "post">
   <h1> Signup</h1>
   <p>First Name: <input id = "first_name" name = "first_name" type = "text"></p>
   <p>Last Name:<input id = "last_name" name = "last_name" type = "text"></p>
   <p>Birthday:<input id = "birthday" name = "birthday" type = "date"></p>
-  <p>Phone Number:<input id = "phone_number" name = "phone_number" type = "text"></p>
-  <p>Email Address:<input id = "email_address" name = "email_address" type = "text"></p>
+  <p>Phone Number:<input id = "phone_number" name = "phone_number" placeholder ="999-999-9999" type = "text"></p>
+  <p>Email Address:<input id = "email_address" name = "email_address"  placeholder = "mail@mail.com" type = "text"></p>
   <p>User Name:<input id = "user_name" name = "user_name" type = "text"></p>
   <p>Password:<input id = "password" name = "password"type = "password"></p>
   <input id = "submit" type="submit" value ="Signup">
+
+
+<style>
+    body  {
+      background-image: url("https://i.pinimg.com/originals/28/8f/81/288f8199887f68854f35fb832d5d5d77.jpg");
+      background-color: #cccccc;
+    } 
+</style>
+
