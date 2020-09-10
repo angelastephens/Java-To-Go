@@ -1,7 +1,11 @@
+<form>
+ <input type="button" value="Back" onclick="history.back()">
+</form>
 <h1>User Homepage.</h1>
+
 <% current_user.drinks.each do |drink|%>
-<a href ="/drinks/<%= drink.id %>"> <%= drink.drink_name %> </a> 
-<% end%>
+<a href ="/drinks/<%= drink.id %>"><%= drink.drink_name %> </a> 
+<%end%>
 
 
 
