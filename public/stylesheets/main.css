@@ -40,9 +40,9 @@
    } */
 
   .wrapper {
-    background: rgb(245, 244, 244);
-    opacity: 0.75;
-    filter:alpha(opacity=75);
+    background: rgba(245, 244, 244, 0.95);
+    /* opacity: 0.95; */
+    /* filter:alpha(opacity=75); */
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
