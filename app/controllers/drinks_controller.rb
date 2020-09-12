@@ -49,4 +49,28 @@ class DrinksController < ApplicationController
     @drinks.destroy
     redirect "/drinks"
   end
+
+  def redirect_if_not_authorized 
+    redirect_if_not_logged_in
+    if !authorize_drink(@drinks)
+      flash[:error] = "You do not have the right permissions to do that!"
+      redirect "/drinks"
+    end 
+  end
+
+  def authorize_drink(drink)
+    current_user == drink.author 
+  end
+
+  def logged_in
+    !!current_user 
+  end
+
+  def redirect_if_not_logged_in
+    if !logged_in?
+      flash[:error] = "You must be logged in to view this page"
+      redirect request.referrer || "/login"
+    end
+  end
+
 end
