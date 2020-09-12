@@ -23,4 +23,10 @@ To try out Java-To-Go:
 - If the user is clicking log in, then they will be directed to their homepage where they can either create a new drink or view their current drinks. 
 - The user will also be able to edit and delete any drink creations they have made.
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Please make sure to update tests as appropriate.
+## License
+Licensed with [MIT](https://choosealicense.com/licenses/mit/)
+
 Happy drink creating!! 
