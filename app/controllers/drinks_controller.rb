@@ -9,6 +9,7 @@ class DrinksController < ApplicationController
 
   # GET: /drinks/new- done 
   get "/drinks/new" do
+    @bg = "https://i.pinimg.com/originals/2f/74/7c/2f747c82bed528308400333fbf80d12a.jpg"
     erb :"/drinks/new.html"
   end
 
@@ -30,16 +31,22 @@ class DrinksController < ApplicationController
   # GET: /drinks/5/edit
     
   get "/drinks/:id/edit" do
+    @bg = "https://media.istockphoto.com/vectors/coffee-makers-set-percolator-syphon-pourover-cezve-french-press-cups-vector-id1180882723"
+    @drinks = Drink.find(params[:id])
     erb :"/drinks/edit.html"
   end
 
   # PATCH: /drinks/5
   patch "/drinks/:id" do
-    redirect "/drinks/:id"
+    @drinks = Drink.find(params[:id])
+    @drinks.update(drink_name: params[:drink_name],temperature: params[:temperature], caffeine_type: params[:caffeine_type], milk_options: params[:milk_options], flavors: params[:flavors])
+    redirect "/drinks"
   end
 
   # DELETE: /drinks/5/delete
-  delete "/drinks/:id/delete" do
+  delete "/drinks/:id" do
+    @drinks = Drink.find(params[:id])
+    @drinks.destroy
     redirect "/drinks"
   end
 end
