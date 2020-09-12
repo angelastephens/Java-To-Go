@@ -3,6 +3,14 @@
 </form>
 
 <h1>View details about your drink and edit or delete.</h1>
+<form method="get" action="/drinks/<%=@drinks.id%>/edit">
+    <button type="submit">Edit</button>
+</form>
+
+<form action ="/drinks/<%=@drinks.id%>" method = "post"> 
+  <input type ="hidden" id ="hidden" name= "_method" value ="delete">
+  <button type="submit">Delete</button>
+</form>
 
 <h1><%= @drinks.drink_name %></h1>
 <p><%= @drinks.temperature %></p>
