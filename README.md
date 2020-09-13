@@ -11,7 +11,7 @@ To try out Java-To-Go:
 - Copy and paste the output into your ```.env``` file directly after ```SESSION_SECRET=``` example SESSION_SECRET= random key goes here
 - Create a file in the root directory called ```.gitignore```
 - Inside ```.gitignore```, enter ```.env```. This will make sure your ```.env``` file is not tracked in github and only you the user will   have access to the ```SESSION_SECRET=```. 
-- Run ```rake db:migrate``` to migrate the 
+- Run ```rake db:migrate``` to migrate the file
 - Type```shotgun``` in your terminal. This will connect to the server so you can have access to the application
 - Open up your web browser and enter the local url provided by the shotgun server. From there you can begin using the application
 - To end the program make sure you type in the terminal control C. If you do not end shotgun then a new session will not be able to run the next time you open it. 
