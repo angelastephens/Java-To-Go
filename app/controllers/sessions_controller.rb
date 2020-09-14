@@ -6,6 +6,8 @@ class SessionsController < ApplicationController
     end
   
     post '/login' do 
+      @bg = "https://image.shutterstock.com/image-vector/bag-coffee-beans-vintage-style-600w-1468619435.jpg"
+
       # find the user by their user name:
       user = User.find_by(user_name: params[:user_name])
       # if they typed in the right password then log them in, if not show them the form again
