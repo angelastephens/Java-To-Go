@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:id] = @user.id
       redirect "/drinks/new"
     else 
-      @error = "Ooops missing field, please try again!"
+      @error = "Ooops missing field or user name is take. Please try again!"
       erb :'/user/new'
     end
     
