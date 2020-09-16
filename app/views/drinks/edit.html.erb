@@ -11,9 +11,9 @@
 <form action ="/drinks/<%=@drinks.id%>" method = "post"> 
   <input type ="hidden" id ="hidden" name= "_method" value ="patch">
 
-  <%# <h1> Edit or Delete your favorite drink! </h1> %>
+
   <p>Drink Name: <input id = "drink_name" name = "drink_name" type = "text" value = "<%=@drinks.drink_name%>"></p>
-  <%# <p>Temperature:<input id = "temperature" name = "temperature" type = "text"></p> %>
+  
   
   <p>Choose a Temperature: <select name="temperature" id="temperature"> </p> 
     <option value="Hot"<%= 'selected' if @drinks.temperature == 'Hot' %> >Hot</option>
@@ -24,8 +24,7 @@
     <br> 
   <p>Choose a Milk type: <select name="milk_options" id="milk_option"> </p>
   <label for="milk_options">Choose a Milk Type:</label>
-  <%# <select name="Milk Options" id="milk_options"> %>
-    <option value="Whole milk"<%= 'selected' if @drinks.milk_options == 'Whole Milk' %>>Whole Milk</option>
+    <option value="Whole Milk"<%= 'selected' if @drinks.milk_options == 'Whole Milk' %>>Whole Milk</option>
     <option value="2% Milk"<%= 'selected' if @drinks.milk_options == '2% Milk' %>>2% Milk</option>
     <option value="Almond"<%= 'selected' if @drinks.milk_options == 'Almond' %>>Almond</option>
     <option value="Oat"<%= 'selected' if @drinks.milk_options == 'Oat' %>>Oat</option>
@@ -33,10 +32,9 @@
     <br>
   <p>Choose a Flavor: <select name="flavors" id="flavors"> </p>
   <label for="flavors">Choose a flavor:</label>
-  <%# <select name="Flavors" id="flavors"> %>
     <option value="Vanilla"<%= 'selected' if @drinks.flavors == 'Vanilla' %>>Vanilla</option>
     <option value="Pumpkin"<%= 'selected' if @drinks.flavors == 'Pumpkin' %>>Pumpkin</option>
-    <option value="Salted honey"<%= 'selected' if @drinks.flavors == 'Salted Honey' %>>Salted Honey</option>
+    <option value="Salted Honey"<%= 'selected' if @drinks.flavors == 'Salted Honey'%>>Salted Honey</option>
     <option value="Lavender"<%= 'selected' if @drinks.flavors == 'Lavender'%>>Lavender</option>
   </select>
   <br>
