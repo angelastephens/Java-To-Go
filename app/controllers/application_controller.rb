@@ -1,59 +1,35 @@
-require './config/environment'
+require './config/environment' #loads the environment file 
 
-class ApplicationController < Sinatra::Base
+class ApplicationController < Sinatra::Base #sintatra base gives access to methods 
 
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-    set :sessions, true
-    set :session_secret, ENV["SESSION_SECRET"]
-    set :method_override, true
-    register Sinatra::Flash
+    set :sessions, true #enabling sessions for uses to visit different pages without having to keep logging in each time ( enables cookies)
+    set :session_secret, ENV["SESSION_SECRET"] # sign cookies with a secure key to make it harder to steal
+    set :method_override, true #lets you overide the post method in the form to let you use patch and delete
+    register Sinatra::Flash # allows you to display message to the user such as an error message 
+    set :show_exceptions, :after_handler
   end
 
-  get "/" do
+  get "/" do #http verb that is setting the index route to render welcome page 
     @bg = "https://st3.depositphotos.com/3746151/13017/v/950/depositphotos_130173158-stock-illustration-sketch-of-coffee-shop-in.jpg"
     erb :'/welcome_signup'
   end
+  error ActiveRecord::RecordNotFound do 
+    flash[:error] = "couldn't find that page"
+    redirect '/drinks'
+  end 
 
   private 
 
-  def current_user 
+  def current_user  #helper method to determine if the user has an active session 
     User.find_by_id(session[:id])
   end
 
-  def logged_in?
-    !!current_user
+  def logged_in? #confirming wheter or not the users is logged in ..checks by session id. if no id it will return false and if yes return true
+    !!current_user #double bang which returns a boolean 
   end
-
-
-  
-  # get '/users/new' do 
-
-  #     erb :'/user/new'
-  # end 
-
-  # post '/signup' do
-  #   @user = User.new(first_name: params[:first_name],last_name: params[:last_name],birthday: params[:birthday], phone_number: params[:phone_number], email_address: params[:email_address], user_name: params[:user_name], password: params[:password])
-  #   if @user.save
-  #     session[:id] = @user.id
-  #     redirect "/drinks/new"
-  #   else 
-  #     @error = "Ooops missing field, please try again!"
-  #     erb :'/user/new'
-  #   end
-    
-  # end
-
-
-  # get '/drink_model/create_drinks' do
-  #   erb :'/drink_model/create_drinks'
-  # end
-
-  # post "/drink_model/create_drinks" do
-    
-  #   redirect to "/homepage"
-  # end
 
 
 
