@@ -1,7 +1,9 @@
 class DrinksController < ApplicationController
 
   # GET: /drinks- done 
-  get "/drinks" do # renders the users index which displays their list of drinks and has a specific backgroun image 
+  get "/drinks" do # renders the users index which displays their list of drinks and has a specific background image 
+    redirect_if_not_logged_in
+      @drink_list = current_user.drinks
     @bg = "https://media1.thehungryjpeg.com/thumbs2/ori_3816392_xb548tcv59f8f0sj0rv1ezc3j70zg6794umksinl_coffee-cup-seamless-pattern-sketch-tea-and-coffee-cups-hot-drinks-va.jpg"
     erb :"/drinks/index.html"
   end
